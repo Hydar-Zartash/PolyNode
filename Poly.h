@@ -23,7 +23,6 @@ public:
 	void multiplyPoly(const Poly& p);
 	void duplicate(Poly& outputPoly);
 	int getDegree();
-	PolyNode* getHeadNode();
 	int getTermsNo() const;
 	double evaluate(double x);
 	std::string toString();

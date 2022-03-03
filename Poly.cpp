@@ -1,6 +1,6 @@
 #include "Poly.h"
 #include <math.h>
-#include <iostream>
+
 using namespace std;
 Poly::Poly()
 {
@@ -9,6 +9,7 @@ Poly::Poly()
 
 Poly::Poly(const std::vector<int>& deg, const std::vector<double>& coeff)
 {
+	//time comp O(n) 
 	head = new PolyNode(-1, 0.0, NULL);
 	PolyNode* temp = head;
 	for (int i = 0; i < deg.size(); i++){
@@ -19,6 +20,7 @@ Poly::Poly(const std::vector<int>& deg, const std::vector<double>& coeff)
 
 Poly::~Poly()
 {
+	// time comp O(n)
 	PolyNode* temp = head;
 	PolyNode* del;
 	while(head->next != NULL){
@@ -94,7 +96,7 @@ void Poly::multiplyMono(int i, double c)
 
 void Poly::multiplyPoly(const Poly& p)
 {
-	int i = p.getTermsNo();
+	//time complexity O(n^2)
 	Poly sum = *(new Poly());
 	PolyNode* pe = p.head; 
 	Poly copy;
@@ -139,9 +141,6 @@ int Poly::getDegree()
 
 }
 
-PolyNode* Poly::getHeadNode(){
-	return head;
-}
 int Poly::getTermsNo() const
 {
 	//time comp O(n)
